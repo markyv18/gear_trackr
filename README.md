@@ -13,10 +13,6 @@ but will need this for getting access_token for each user
 https://git.heroku.com/geartrackr.git
 local host
 
-Client ID: 19215
-Client Secret: a769a19e246cf242f687c2d7b4fa7c5f31d99c64
-Your Access Token: e394a43274d4eeda8bdf0ddb09916f3fda257f70
-
 Have User grant the application access to their Strava Account via Oauth2 and store that token in the DB with their other information.  
 ---------------------------------------------------------------------------
 
