@@ -1,0 +1,5 @@
+class AddNewColumnUnToUsers < ActiveRecord::Migration[5.0]
+  def change
+    add_column :users, :strava_username, :string
+  end
+end
