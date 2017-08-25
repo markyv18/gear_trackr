@@ -4,42 +4,7 @@
 
 https://geartrackr.herokuapp.com
 
-User arrives and sees
-
-https://www.strava.com/oauth/authorize?client_id=19215&response_type=code&redirect_uri=getpostman.com&scope=public
-^^^ this spits back the access_token found below.  Der duh der.
-but will need this for getting access_token for each user
-
-https://git.heroku.com/geartrackr.git
-local host
-
-Have User grant the application access to their Strava Account via Oauth2 and store that token in the DB with their other information.  
----------------------------------------------------------------------------
-
-It1 - call current athlete info using access_token to grab it #{access_token}
-https://www.strava.com/api/v3/athlete?access_token=e394a43274d4eeda8bdf0ddb09916f3fda257f70
-
-"bikes": [
-       {   "id": "b4048559",
-           "name": "Crui-mmuter",
-           "distance": 0
-         }
-   ],
-"shoes": [
-       {
-           "id": "g2435966",
-           "name": "Altra Superior Blue",
-           "distance": 0
-       }
-   ]
-
----------------------------------------------------------------------------
-It2 - possibly for velofix.... they'll want to know *brand*, *model*, and maybe the *frame type* (MTB v Road etc)
-
-call gear_id to gain those three additional attributes
-       https://www.strava.com/api/v3/gear/b1497616?access_token=e394a43274d4eeda8bdf0ddb09916f3fda257f70
-
----------------------------------------------------------------------------
+-----------------------------------------------------
 List Athlete Activities (http://strava.github.io/api/v3/activities/#get-activities)
 
 Use below API call and parameters to retrieve...
