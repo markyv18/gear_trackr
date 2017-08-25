@@ -5,7 +5,7 @@ RSpec.describe StravaService do
     it "talks to strava" do
       VCR.use_cassette("services/strava_vcr") do
         strava = StravaService.talk_to_strava
-        
+
       end
     end
   end
