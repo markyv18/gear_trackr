@@ -28,18 +28,7 @@ class User < ApplicationRecord
       user.save
     end
   end
-
-    # "bikes"=>[
-#    https://apidock.com/rails/v4.0.2/ActiveRecord/Relation/find_or_create_by
-    #           {"id"=>"b4048559", "primary"=>false, "name"=>"Crui-mmuter", "resource_state"=>2, "distance"=>0.0},
-    #           {"id"=>"b4048706", "primary"=>false, "name"=>"MTB", "resource_state"=>2, "distance"=>109305.0},
-    #           {"id"=>"b1497617", "primary"=>false, "name"=>"P3", "resource_state"=>2, "distance"=>248936.0},
-    #           {"id"=>"b1497616", "primary"=>true, "name"=>"S1", "resource_state"=>2, "distance"=>2488024.0}],
-    #
-    # "shoes"=>[{"id"=>"g2435966", "primary"=>false, "name"=>"Altra Superior Blue", "resource_state"=>2, "distance"=>0.0},
-    #           {"id"=>"g2435965", "primary"=>true, "name"=>"Altra The One 2.5 Red", "resource_state"=>2, "distance"=>0.0},
-    #           {"id"=>"g2435967", "primary"=>false, "name"=>"Altra Lone Peak Mid Hiker Yellow", "resource_state"=>2, "distance"=>8851.0}]}
-
+  
   # def welcome_email
   #   SendEmailJob.perform_later(self)
   # end
