@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170825041512) do
+ActiveRecord::Schema.define(version: 20170926204955) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -41,6 +41,8 @@ ActiveRecord::Schema.define(version: 20170825041512) do
     t.integer  "friend_count"
     t.string   "date_format"
     t.string   "measure_format"
+    t.string   "bike_shop"
+    t.string   "bike_shop_email"
   end
 
   add_foreign_key "gears", "users", column: "users_id"
