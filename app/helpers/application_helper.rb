@@ -10,7 +10,7 @@ module ApplicationHelper
 
   def landing_service
     if logged_in?
-      link_to "Your Gear Dashboard", dashboard_path, :class => "page-scroll" # future: dashboard_path(@user)
+      link_to "Gear Dashboard", dashboard_path, :class => "page-scroll" # future: dashboard_path(@user)
     else
       link_to image_tag('btn_strava_connectwith_light@2x.png'), "https://www.strava.com/oauth/authorize?client_id=#{ENV['STRAVA_ID']}&response_type=code&redirect_uri=http://localhost:3000/oauth2/:provider/callback"
     end
@@ -21,6 +21,22 @@ module ApplicationHelper
       link_to "Log Out", logout_path, :method => :delete
     else
       link_to "How it works", how_it_works_path, :class => "page-scroll"
+    end
+  end
+
+  def instruction_toggle
+    if logged_in?
+      simple_format("Visit your Gear Dashboard to view or track your gear", class: 'transbox')
+    else
+      simple_format("Click the the Strava icon to get started tracking your gear and we'll let you know when you need to rotate shoes, rebuild your shock, or schedule a tune up on your road bike!", class: 'transbox')
+    end
+  end
+
+  def bike_shop_toggle
+    if @user.bike_shop == nil
+      #run google place bike shop search
+    else
+      simple_format("Your go to shop for maintenance is #{@user.bike_shop}", class: 'transbox')
     end
   end
 
