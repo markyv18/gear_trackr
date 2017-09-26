@@ -30,6 +30,7 @@ class User < ApplicationRecord
   end
 
     # "bikes"=>[
+#    https://apidock.com/rails/v4.0.2/ActiveRecord/Relation/find_or_create_by
     #           {"id"=>"b4048559", "primary"=>false, "name"=>"Crui-mmuter", "resource_state"=>2, "distance"=>0.0},
     #           {"id"=>"b4048706", "primary"=>false, "name"=>"MTB", "resource_state"=>2, "distance"=>109305.0},
     #           {"id"=>"b1497617", "primary"=>false, "name"=>"P3", "resource_state"=>2, "distance"=>248936.0},
