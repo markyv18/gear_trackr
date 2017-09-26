@@ -15,7 +15,7 @@ Rails.application.routes.draw do
 #where user lands after login process or having visited before
   get '/dashboard', to: 'users#show'
 
-  get '/logout', to: 'sessions#destroy'
+  delete '/logout', to: 'sessions#destroy'
 
   # get '/login', to: 'sessions#new'
   #

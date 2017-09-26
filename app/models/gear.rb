@@ -7,11 +7,13 @@ class Gear < ApplicationRecord
 
   def self.update_or_create(gear_info, user)
     gears = Gear.find_by(strava_id: gear_info[:id]) || User.new
+    byebug
     gears.each do |gear|
+      byebug
       gear.name                     =  gear_info[:name]
       gear.total_distance_in_meters =  gear_info[:distance]
       gear.strava_gear_id           =  gear_info[:id]
-      gear.users_id =               =  user
+      gear.users_id                 =  gear_info[:id]
       gear.save!
     end
   end

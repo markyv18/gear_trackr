@@ -5,14 +5,8 @@ class SessionsController < ApplicationController
 
 
   def create
-    strava_user_info = User.strava_oauth2_call(params[:code])
-    @user = User.update_or_create(strava_user_info.symbolize_keys)
-    Gear.update_or_create(strava_user_info.symbolize_keys[:bikes], @user.id)
-
-    session[:user_id] = @user.id
-
-    current_user
-    redirect_to dashboard_path
+    @user = strava_login_info
+    user?
   end
 
   def destroy
@@ -20,21 +14,20 @@ class SessionsController < ApplicationController
     redirect_to root_path
   end
 
-  # private
-  #
-  # def oauth_info
-  #   request.env["omniauth.auth"]
-  # end
+  private
 
-  # def oauth_login(user)
-  #  if user && user.new_record?
-  #    session[:omniauth_info] = oauth_info
-  #    register_redirect(user)
-  #  else
-  #    session[:user_id] = user.id
-  #    session[:authenticated] = true
-  #    user_redirect(user)
-  #  end
-  # end
+  def strava_login_info
+    User.strava_oauth2_call(params[:code])
+  end
+
+  def user?
+    if @user
+      session[:user_id] = @user.id
+      current_user
+      redirect_to dashboard_path(@user)
+    else
+      flash[:info] = "Unsuccesful log in attempt.  Do you have a Strava account?  If not please go to www.strava.com to sign up."
+    end
+  end
 
 end
