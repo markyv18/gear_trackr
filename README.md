@@ -4,6 +4,30 @@
 
 https://geartrackr.herokuapp.com
 
+email_field_tag(name, value = nil, options = {}) Link
+Creates a text field of type “email”.
+
+Options
+
+Accepts the same options as text_field_tag.
+
+Examples
+
+email_field_tag 'name'
+# => <input id="name" name="name" type="email" />
+
+email_field_tag 'email', 'email@example.com'
+# => <input id="email" name="email" type="email" value="email@example.com" />
+
+email_field_tag 'email', nil, class: 'special_input'
+# => <input class="special_input" id="email" name="email" type="email" />
+
+email_field_tag 'email', 'email@example.com', class: 'special_input', disabled: true
+# => <input disabled="disabled" class="special_input" id="email" name="email" type="email" value="email@example.com" />
+Source: show | on GitHub
+
+
+
 -----------------------------------------------------
 List Athlete Activities (http://strava.github.io/api/v3/activities/#get-activities)
 
