@@ -15,22 +15,18 @@ Rails.application.routes.draw do
 #where user lands after login process or having visited before
   get '/dashboard', to: 'users#show'
 
-  get '/search', to: 'shops#index'
-
-  post '/home-shop', to: "users#update"
+  patch '/add-shop', to: "users#update"
+  # get '/search', to: 'shops#index'
+  # resources :users, only: [:update, :show]
 
   delete '/logout', to: 'sessions#destroy'
+
+  # resources :shops, only: [:index]
 
   namespace :api do
     namespace :v1 do
       resources :shops, only: [:index]
+      # resources :users, only: [:update]
     end
   end
-
-
-  # get '/login', to: 'sessions#new'
-  #
-  # post '/login', to: 'sessions#create'
-
-
 end
