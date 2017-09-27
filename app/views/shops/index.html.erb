@@ -1,0 +1,11 @@
+<br><br>
+<header>
+  <h2> Select a shop from the list below to make it your home shop </h2>
+    <%= form_tag home_shop_path do %>
+      <% @shops.each do |shop| %>
+        <%= radio_button_tag(:shop_name, shop.name) %>
+        <%= label_tag(:shop_name, shop.name) %> <br>
+      <% end %>
+    <%= submit_tag "Add this Shop to your Account" %>
+  <% end %>
+</header>

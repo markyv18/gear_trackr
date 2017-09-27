@@ -33,10 +33,18 @@ module ApplicationHelper
   end
 
   def bike_shop_toggle
-    if @user.bike_shop == nil
-      #run google place bike shop search
+    if @user.shop_name == nil
+
     else
-      simple_format("Your go to shop for maintenance is #{@user.bike_shop}", class: 'transbox')
+      simple_format("Your go to shop for maintenance is #{@user.shop_name}", class: 'transbox')
+    end
+  end
+
+  def gear_track_toggle
+    if 5 > 6
+      simple_format("5 does not equal 6!!! and thus this should never show", class: 'transbox') #display set up for tracking chart
+    else
+      simple_format("Track your gear (in the future) here", class: 'transbox') #display gear tracking chart
     end
   end
 

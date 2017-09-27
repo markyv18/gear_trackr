@@ -1,9 +1,33 @@
 <header>
     <div class="header-content">
         <div class="header-content-inner">
+
           <p class="transbox">Welcome, <%= @user.first_name %></p>
+
           <hr>
-          <%= bike_shop_toggle %>
+
+          <% if @user.shop_name == nil %>
+            <%= form_for :search, url: '/search', method: :get, class: "navbar-form navbar-left" do |f| %>
+              <%= text_field_tag :location, "Enter Zip", class: "transbox bike-search" %>
+              <%= submit_tag "Submit", class: "btn btn-primary" %>
+            <% end %>
+          <% else %>
+              <%= simple_format("Your go to shop for maintenance is #{@user.shop_name}", class: 'transbox') %>
+          <% end %>
+
+          <!-- <div class "find-bike-shops transbox">
+            <form>
+              <div>
+                <input type="text" name="location" placeholder="Enter Your Home Zip" class="transbox bike-search">
+                <input type="submit" class="btn btn-search bike-search-btn" >
+              </div>
+            </form>
+          </div> -->
+
+          <hr>
+
+          <%= gear_track_toggle %>
+          
         </div>
     </div>
 </header>
