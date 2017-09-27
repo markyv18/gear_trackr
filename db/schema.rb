@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170926204955) do
+ActiveRecord::Schema.define(version: 20170927052549) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -41,8 +41,10 @@ ActiveRecord::Schema.define(version: 20170926204955) do
     t.integer  "friend_count"
     t.string   "date_format"
     t.string   "measure_format"
-    t.string   "bike_shop"
-    t.string   "bike_shop_email"
+    t.string   "slug"
+    t.string   "shop_name"
+    t.string   "shop_email"
+    t.index ["slug"], name: "index_users_on_slug", using: :btree
   end
 
   add_foreign_key "gears", "users", column: "users_id"
