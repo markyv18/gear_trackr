@@ -7,13 +7,13 @@ abort("The Rails environment is running in production mode!") if Rails.env.produ
 require 'rspec/rails'
 require 'capybara/rails'
 require 'rack_session_access/capybara'
-require 'webmock/rspec'
-require 'vcr'
+# require 'webmock/rspec'
+# require 'vcr'
 
-VCR.configure do |config|
-  config.cassette_library_dir = "spec/cassettes"
-  config.hook_into :webmock
-end
+# VCR.configure do |config|
+#   config.cassette_library_dir = "spec/cassettes"
+#   config.hook_into :webmock
+# end
 
 
 Dir[Rails.root.join('spec/support/**/*.rb')].each { |f| require f }
