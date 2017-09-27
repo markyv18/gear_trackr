@@ -21,6 +21,7 @@ gem 'omniauth-strava'
 gem 'bcrypt', '~> 3.1.7'
 gem 'figaro'
 gem 'strava-api-v3'
+gem 'geocoder'
 
 group :test do
   gem 'capybara'
