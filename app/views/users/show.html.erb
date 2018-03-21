@@ -6,28 +6,22 @@
 
           <hr>
 
-          <div id="bike-shop" class "shop-info-toggle transbox">
-            <form>
-              <div>
-                <input type="text" name="location" placeholder="Enter Zip to find a shop" class="transbox shop-search">
-                <button class="btn btn-search shop-search-btn"> Submit </button>
+          <% if @user.shop_name == nil %>
+            <form class="form-inline">
+              <div id="bike-shop" class="form-group transbox search-field">
+                <p>Enter a zip and we'll find some shops nearby</p>
+                <div>
+                  <input type="text" name="location" placeholder="Enter Zip" id="shop-search">
+                  <button id="shop-search-btn" class="btn btn-search"> Submit </button>
+                </div>
               </div>
             </form>
-          </div>
 
 
-          <%= form_tag('/add-shop', method: :put) do %>
-          <input type="text" name="shop-to-add" id="shop-to-add" value="Enter Shop from above" class="form-control">
-          <button class="btn btn-search shop-search-btn"> Submit </button>
-        <% end %>
+          <% else %>
+            <%= simple_format("Your go to shop for maintenance is #{@user.shop_name}", class: 'transbox') %>
+          <% end %>
 
-<!--
-          <form class="form-inline" action="/add-shop" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="✓">
-            <div class="form-group search-field">
-              <input type="text" name="shop-to-add" id="shop-to-add" value="Enter Shop from above" class="form-control">
-              <button class="btn btn-search shop-search-btn"> Add Your Shop </button>
-            </div>
-          </form> -->
 
           <hr>
 

@@ -2,7 +2,7 @@ class GoogleBikeShopService
 
   def self.shop_query(location)
     lat_long = find_lat_long(location)
-    response = Faraday.get("https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=#{lat_long[:lat]},#{lat_long[:lng]}&radius=3000&key=#{ENV['GOOGLE_KEY']}&keyword=bikerepair&types=bicycle_store&rankBy=distance")
+    response = Faraday.get("https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=#{lat_long[:lat]},#{lat_long[:lng]}&radius=4000&key=#{ENV['GOOGLE_KEY']}&keyword=bikerepair&types=bicycle_store&rankBy=distance")
     JSON.parse(response.body, symbolize_names: true)[:results]
   end
 

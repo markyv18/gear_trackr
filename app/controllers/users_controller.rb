@@ -5,7 +5,6 @@ class UsersController < ApplicationController
   end
 
   def update
-    byebug
     @user = current_user
     if @user.update_attributes(user_params)
       flash[:info] = "successfully added #{params[:shop_name]} as your shop of record"

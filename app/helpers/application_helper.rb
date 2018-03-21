@@ -34,7 +34,7 @@ module ApplicationHelper
 
   def bike_shop_toggle
     if @user.shop_name == nil
-
+      # would like to render a partial here
     else
       simple_format("Your go to shop for maintenance is #{@user.shop_name}", class: 'transbox')
     end
