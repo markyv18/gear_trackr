@@ -28,7 +28,6 @@ class User < ApplicationRecord
       user.save
     end
   end
-  
 
   # def welcome_email
   #   SendEmailJob.perform_later(self)
